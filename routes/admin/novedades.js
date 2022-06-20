@@ -10,7 +10,7 @@ var destroy = util.promisify(cloudinary.uploader.destroy);
 
 /* GET home page. */
 router.get('/', async function (req, res, next) {
-   // var novedades = await novedadesModel.getNovedades();
+   //  var novedades = await novedadesModel.getNovedades();
    var novedades;
    if (req.query.q === undefined) {
       novedades = await novedadesModel.getNovedades();
