@@ -1,0 +1,388 @@
+<!-- navbar inicio -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">FormulaNoticias</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" id="">
+            <ul class="navbar-nav me-auto mr-8 m-lg-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" data-scroll href="#Inicio">Inicio</a>
+                </li>
+                {{!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-scroll href="#Deportes" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Deportes
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">F1</a></li>
+                        <li><a class="dropdown-item" href="#">TC</a></li>
+                        <li><a class="dropdown-item" href="#">TC 2000</a></li>
+                        <li><a class="dropdown-item" href="#">Futbol</a></li>
+                        <li><a class="dropdown-item" href="#">Tenis</a></li>
+                        <li><a class="dropdown-item" href="#">Basquet</a></li>
+                        <li><a class="dropdown-item" href="#">Hokey</a></li>
+                        <li><a class="dropdown-item" href="#">Otros</a></li>
+                    </ul> --}}
+                <li class="nav-item">
+                    <a class="nav-link" data-scroll href="#UltimasNoticias">Ultimas Noticias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-scroll href="#Videos">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-scroll href="#Acercade">Equipo</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" data-scroll href="#Contactanos">Contactanos</a>
+                </li>
+                </li>
+            </ul>
+            {{!-- <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form> --}}
+        </div>
+    </div>
+</nav>
+
+<!-- navbar fin -->
+<!-- carousel inicio -->
+<main>
+    <section>
+        <article>
+            <div id="Inicio" class="carousel slide" data-bs-ride="carousel">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="/images/img1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/images/img2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/images/img3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+        </article>
+    </section>
+
+    <!-- carousel final -->
+
+    <!-- cartas inicio -->
+    <article>
+        <div id="UltimasNoticias" class="title">
+            <div class="Titulo-cartas">
+                <h2 class="Titulo-cartas"> Últimas Noticias</h2>
+            </div>
+        </div>
+
+        <div id="novedades" class="row">
+            <div class="col" style="padding-right: 100px; padding-left:0px;">
+
+                <ul class="lista-novedades">
+                    {{#each novedades}}
+                    <li><a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#modal{{id}}"> <img
+                                src="{{imagen}}" alt="">
+                            {{titulo}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{#each novedades}}
+            <div class="modal fade" id="modal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h5 class="modal-tittle">{{titulo}}</h5>
+                            <button type="button" class="close" data-dimiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h6>{{subtitulo}}</h6>
+                            <img src="{{imagen}}">
+                            <p>{{cuerpo}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </article>
+
+
+
+    {{!-- <section>
+        <article>
+            <div id="UltimasNoticias" class="title">
+                <div class="Titulo-cartas">
+                    <h2><a href="" class="Titulo-cartas"> Últimas Noticias</a></h2>
+                </div>
+            </div>
+            <div class="cartas-inicio">
+                <div class="container">
+                    <div class="row cards">
+                        <div class="col order-last">
+                            <div class="card border-5" style="width: 18rem;">
+                                <div class="card-img-top-3"></div>
+                                <div class="card-body">
+                                    <p><a class="link" href="#">Futbol</a></p>
+                                    <a href="#" class="btn">Portugal Clasifica al Mundial tras ganarle a Macedonia
+                                        2-0</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border-5" style="width: 18rem;">
+                                <div class="card-img-top-2"></div>
+                                <div class="card-body">
+                                    <p><a class="link" href="#">Basquet</a></p>
+                                    <a href="#" class="btn">Manu Ginobili entrará al Hall of Fame de la NBA</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col order-first">
+                            <div class="card border-5" style="width: 18rem;">
+                                <div class="card-img-top-1"></div>
+                                <div class="card-body">
+                                    <p><a class="link" href="#">Futbol</a></p>
+                                    <a href="#" class="btn">Argentina debuta en el Mundial contra Arabia Saudi</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row cards">
+                        <div class="col order-last">
+                            <div class="card border-5" style="width: 18rem;">
+                                <div class="card-img-top-6"></div>
+                                <div class="card-body">
+                                    <p><a class="link" href="#">F1</a></p>
+                                    <a href="#" class="btn">¿Cuál de los dos pilotos de Ferrari quedará por encima
+                                        del
+                                        otro?</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border border-5" style="width: 18rem;">
+                                <div class="card-img-top-5"></div>
+                                <div class="card-body">
+                                    <p><a class="link" href="#">F1</a></p>
+                                    <a href="#" class="btn">Todo lo que tenes que saber sobre los nuevos GP's de
+                                        Miami y
+                                        Las
+                                        Vegas</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col order-first">
+                            <div class="card border border-5" style="width: 18rem;">
+                                <div class="card-img-top-4"></div>
+                                <div class="card-body">
+                                    <p><a class="link" href="#">Otros</a></p>
+                                    <a href="#" class="btn">De Boxeador Olimpico a Soldado en La Guerra de las
+                                        Malvinas
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section> --}}
+
+    <!-- cartas final -->
+
+
+
+    <!-- mas noticias videos inicio -->
+    <section>
+        <article>
+            <div id="Videos" class="title">
+                <div class="Titulo-cartas">
+
+                    <h2 class="Titulo-cartas">Videos</h2>
+
+
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col">
+                        <div class="card-vid">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/OvhVLFQmgOY"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card-vid">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/OvhVLFQmgOY"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card-vid">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/OvhVLFQmgOY"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card-vid">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/OvhVLFQmgOY"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+        </article>
+    </section>
+
+
+    <!-- mas noticias final -->
+
+
+
+    <!-- marketing -->
+    <section>
+        <article>
+            <div id="Acercade" class="Titulo-cartas" style="padding-top: 15vw;">
+                <h3 class="Titulo-cartas">Equipo</h3>
+            </div>
+            <div class="column-marketing">
+                <div class="container">
+                    <div class="row cards">
+                        <div class="col order-last">
+                            <div class="card border-5" style="width: 18rem;">
+                                <div class="card-img-top-10 rounded-circle">
+                                    <img src="/images/img10.jpg" class="imagen1" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <p><a class="link" href="#">Periodista</a></p>
+                                    <a href="#" class="btn">
+                                        <h4>Fabrizio Guzman</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border border-5" style="width: 18rem;">
+                                <div class="card-img-top-11">
+                                    <img src="/images/img12.jpg" class="imagen2" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <p><a class="link" href="#">Jefe</a></p>
+                                    <a href="#" class="btn">
+                                        <h4>Mariano Gamba</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col order-first">
+                            <div class="card border border-5" style="width: 18rem;">
+                                <div class="card-img-top-11">
+                                    <img src="/images/img11.jpg" class="imagen3" alt="">
+                                </div>
+                                <div class="card-body">
+                                    <p><a class="link" href="#">Periodista</a></p>
+                                    <a href="#" class="btn">
+                                        <h4>Nicolás Gamba</h4>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- marketing -->
+
+
+
+    <!-- contactanos -->
+
+    <footer style="background: rgb(197, 197, 197);">
+
+        <form action="/" method="post">
+            <div class="footer-contactos">
+                <div id="Contactanos">
+                    <h3 class="Titulo-cartas" style="font-family: Roboto, sans serif;">¡Contactanos!</h3>
+                </div>
+                <div class="row">
+                    <div class="col col-md-6"><label for="inputName">Nombre</label>
+                        <input type="name" class="form-control" id="name" name="nombre"
+                            style="background: rgb(233, 232, 232)">
+                    </div>
+                    <div class="col col-lg-6"> <label for="inputLastname">Apellido</label>
+                        <input type="lastname" class="form-control" id="lastname" name="apellido"
+                            style="background: rgb(233, 232, 232)">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="inputMail">Mail</label>
+                        <input type="mail" class="form-control" id="inputMail" name="mail"
+                            style="background: rgb(233, 232, 232)">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputTelefono">Telefono</label>
+                        <input type="Phone" class="form-control" id="inputTelefono" name="telefono"
+                            style="background: rgb(233, 232, 232)">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Escribinos</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                            style="background: rgb(233, 232, 232);" name="escribinos" rows="2"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin-top: 15px;">Enviar</button>
+            </div>
+        </form>
+
+        <h5>Hecho por Mariano Gamba</h5>
+
+    </footer>
+
+</main>
+
+<!-- contactanos -->
